@@ -100,6 +100,7 @@
         "routes": {
           "IOTCSimulatorModuleToIoTHub": "FROM /messages/modules/IOTCSimulatorModule/outputs/* INTO BrokeredEndpoint(\"/modules/IOTCBridgeModule/inputs/iotc\")",
           "SimulatedTemperatureSensorToIOTCSimulatorModule": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/* INTO BrokeredEndpoint(\"/modules/IOTCSimulatorModule/inputs/device1\")",
+          "SimulatedTemperatureSensorToIOTCSimulatorModule2": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/* INTO BrokeredEndpoint(\"/modules/IOTCSimulatorModule/inputs/device2\")",
           "upstream": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/* INTO $upstream"
         },
         "storeAndForwardConfiguration": {
