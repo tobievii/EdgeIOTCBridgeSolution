@@ -124,7 +124,7 @@ async function getPrimaryKey(context, secretUrl) {
   return secretUrl;
 }
 ```
-5. Create an .env file to hold the IoT Central Scope ID and Primary or Secondary key
+5. Create a .env file to hold the IoT Central Scope ID and Primary or Secondary key
 ```
 ID_SCOPE=<Your IoT Central Scope ID>
 IOTC_KEY=<Your Iot Central Primary or Secondary key>
@@ -135,7 +135,7 @@ IOTC_KEY=<Your Iot Central Primary or Secondary key>
 
   ![Scope ID and key](images/scopeIdAndKey.png "Scope ID and key")
 
-    These environment variables should be used in the deployment template in your solution as part of the IOTCBridgeModule deployment (see my example deployment template i this solution).
+These environment variables should be used in the deployment template in your solution as part of the IOTCBridgeModule deployment (see my example deployment template in this solution).
 
 7. Build and deploy the IoT Edge module.
 
@@ -165,7 +165,7 @@ NOTE: Until the device is associated to a template, HTTP calls to the function w
 ![Associate device](images/associate.png "Associate device")
 
 ## Modules and routing
-The example contains an example module that transforms the telemetry coming out of the Simulated Temperature Sensor module. The only thing this module does is to take the simulated telemetry as input and then transforms it into the telemetry as expected by the IOTCBridgeModule. The IOTCBridgeModule listens to 'iotc' as input and if a message arrives it connects as a device to IoT Central and send the message.
+The example contains an example module that transforms the telemetry coming out of the Simulated Temperature Sensor module. The only thing this module does is to take the simulated telemetry as input and then transforms it into the telemetry as expected by the IOTCBridgeModule. The IOTCBridgeModule listens to 'iotc' as input and if a message arrives it connects as a device to IoT Central and sends the message.
 
 NB: Example route
 ```json
