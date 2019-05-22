@@ -1,5 +1,5 @@
 # Using Azure IoT Edge to preprocess Azure IoT Central device telemetry
-[Azure IoT Central](https://docs.microsoft.com/nl-nl/azure/iot-central/overview-iot-central) is a powerfull IoT SaaS solution provided by Microsoft. Currently Azure IoT Central has some contraints on pre-processing telemetry and connecting legacy devices. To overcome these constraints you can use Azure IoT Edge as the preprocessing engine. Azure IoT Edge comes with a number features that allows you to extend your use of Azure IoT Central as your core IoT platform.
+[Azure IoT Central](https://docs.microsoft.com/nl-nl/azure/iot-central/overview-iot-central) is a powerfull IoT SaaS solution provided by Microsoft. Currently Azure IoT Central has some contraints on preprocessing telemetry and connecting legacy devices. To overcome these constraints you can use Azure IoT Edge as the preprocessing engine. Azure IoT Edge comes with a number features that allows you to extend your use of Azure IoT Central as your core IoT platform.
 This github repository contains an example on how to reuse the [Azure IoT Central Device Bridge](https://github.com/Azure/iotc-device-bridge) code to create a IoT Central Bridge module.
 
 # Implementing the Lamba architecure on Azure IoT Edge
@@ -12,7 +12,7 @@ IoT Edge modules are units of execution, implemented as Docker compatible contai
 Lambda architecture is a data-processing architecture designed to handle massive quantities of data by taking advantage of both batch and stream-processing methods. This approach to architecture attempts to balance latency, throughput, and fault-tolerance by using batch processing to provide comprehensive and accurate views of batch data, while simultaneously using real-time stream processing to provide views of online data. Lambda architecture describes a system consisting of three layers: batch processing, speed (or real-time) processing, and a serving layer for responding to queries. 
 The combination of Azure IoT Edge and Azure IoT Central can be used to implement this approach. Where Azure IOT Edge will be used to be the dispatcher for hot and cold data and Azure IoT Central can be used as the serving layer for the hot data.
 
-![Lambda Architecture using IoT Edge & IoT Central](images/Lambda Architecture.png "Lambda Architecture using IoT Edge & IoT Central")
+![Lambda Architecture using IoT Edge & IoT Central](images/Lambda-Architecture.png "Lambda Architecture using IoT Edge & IoT Central")
 
 ## Using packaged Azure Services
 
