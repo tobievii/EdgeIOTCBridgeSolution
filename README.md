@@ -33,7 +33,7 @@ Azure Blob Storage on IoT Edge ([tutorial](https://docs.microsoft.com/en-us/azur
 ## Azure IoT Hub
 Azure IoT Hub is a managed service, hosted in the cloud, that acts as a central message hub for bi-directional communication between your IoT application and the devices it manages. In this example Azure IoT Hub is used to manage the Azure IoT Edge devices and modules. 
 
-# Example: Azure IoT Central Edge Module
+# Example: Azure IoT Central Bridge Module
 This repository contains a Viual Studio Code example of an Azure IoT Edge module (Node.js) that can be used to send telemetry to Azure IoT Central. This example is based on the [Azure IoT Central Device Bridge](https://github.com/Azure/iotc-device-bridge). Almost all code is the same except for the index.js file, which is replaced by an app.js file acting as a Azure IoT Edge module. This example consists of 2 Azure IoT Edge modules. The IOTCBridgeModule that ensures device register to and messages are send to Azure IoT Central, and a transformation module (IOTCSimulatorModule) that transforms the data coming from the [Simulated Temperature Sensor](https://azuremarketplace.microsoft.com/en/marketplace/apps/microsoft.edge-simulated-temperature-sensor-ga?tab=Overview) module.
 
 ## Converting the Azure IoT Central Device Bridge into a module
@@ -130,9 +130,10 @@ IOTC_KEY=<Your Iot Central Primary or Secondary key>
 6. Go to your IoT Central application, and navigate to the `Administration > Device Connection` area.
   - Copy the `Scope ID` and paste it into the `ID_SCOPE` enviroment variable. 
   - Copy one of the SAS keys, so either the `Primary Key` or the `Secondary Key`, and paste it into the `IOTC_KEY` environment variable.
-  These environment variables should be used in the deployment template in your solution as part of the IOTCBridgeModule deployment (see my example deployment template i this solution).
 
   ![Scope ID and key](images/scopeIdAndKey.png "Scope ID and key")
+
+    These environment variables should be used in the deployment template in your solution as part of the IOTCBridgeModule deployment (see my example deployment template i this solution).
 
 7. Build and deploy the IoT Edge module.
 
@@ -162,7 +163,7 @@ NOTE: Until the device is associated to a template, HTTP calls to the function w
 ![Associate device](images/associate.png "Associate device")
 
 ## Modules and routing
-The example contains am example module that transforms the telemetry coming out of the Simulated Temperature Sensor module. The only thing this module does is to take the simulated telemetry as input and then transforms it into the telemetry as expected by the IOTCBridgeModule. The IOTCBridgeModule listens to 'iotc' as input and if a message arrives it connects as a device to IoT Central and send the message.
+The example contains an example module that transforms the telemetry coming out of the Simulated Temperature Sensor module. The only thing this module does is to take the simulated telemetry as input and then transforms it into the telemetry as expected by the IOTCBridgeModule. The IOTCBridgeModule listens to 'iotc' as input and if a message arrives it connects as a device to IoT Central and send the message.
 
 NB: Example route
 ```json
