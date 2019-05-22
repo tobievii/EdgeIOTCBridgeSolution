@@ -15,6 +15,8 @@ The picture below depicts an approach for using Azure packaged servcies as modul
 
 ![Lambda Architecture using IoT Edge & IoT Central](images/Lambda-Architecture.png "Lambda Architecture using IoT Edge & IoT Central")
 
+The depicted custom Lambda module is not part of this example, but can be easily created using Visual Studio Code.
+
 ## Using packaged Azure Services
 There are a number of Azure Services that can be used as modules on the IoT Edge. These services can enrich the Azure IoT Central experience by creating and preprocessing data as well as overcome Azure IoT Central constraints.
 
