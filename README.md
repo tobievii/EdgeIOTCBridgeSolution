@@ -132,7 +132,7 @@ IOTC_KEY=<Your Iot Central Primary or Secondary key>
   - Copy one of the SAS keys, so either the `Primary Key` or the `Secondary Key`, and paste it into the `IOTC_KEY` environment variable.
   These environment variables should be used in the deployment template in your solution as part of the IOTCBridgeModule deployment (see my example deployment template i this solution).
 
-  ![Scope ID and key](images/scopeIdAndKey.PNG "Scope ID and key")
+  ![Scope ID and key](images/scopeIdAndKey.png "Scope ID and key")
 
 7. Build and deploy the IoT Edge module.
 
@@ -159,7 +159,7 @@ NOTE: deviceId must be alphanumeric, lowercase, and may contain hyphens. The val
 9. When a message with a new deviceId is sent to IoT Central by the device bridge, a device will be created as an Unassociated device. Unassociated devices appear in your IoT Central application in Device Explorer > Unassociated devices. Click Associate and choose a device template to start receiving incoming measurements from that device in IoT Central.
 
 NOTE: Until the device is associated to a template, HTTP calls to the function will return a 403 error status.
-![Associate device](images/associate.PNG "Associate device")
+![Associate device](images/associate.png "Associate device")
 
 ## Modules and routing
 The example contains am example module that transforms the telemetry coming out of the Simulated Temperature Sensor module. The only thing this module does is to take the simulated telemetry as input and then transforms it into the telemetry as expected by the IOTCBridgeModule. The IOTCBridgeModule listens to 'iotc' as input and if a message arrives it connects as a device to IoT Central and send the message.
